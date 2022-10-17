@@ -17,7 +17,7 @@ if (!app.Environment.IsDevelopment())
 <<<<<<< HEAD
     //  The default HSTS value is 30 days. You may want to change this for production scenarios, see ! https://aka.ms/aspnetcore-hsts.
 =======
-    //The default HSTS value is 30 days. You may want to change this for production scenarios, see !!!!!!!!!! https://aka.ms/aspnetcore-hsts.
+    //The default HSTS value is 30 days. You may w   ant to change this for production scenarios, see !!!!!!!!!! https://aka.ms/aspnetcore-hsts.
 >>>>>>> main
     app.UseHsts();
 }
