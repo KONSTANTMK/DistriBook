@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    internal interface ICategoryRepository : IRepository<CategoryModel>
+    public interface ICategoryRepository : IRepository<CategoryModel>
     {
         void Update(CategoryModel obj);
         void Save();
