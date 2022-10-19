@@ -1,5 +1,5 @@
-﻿using BulkyBookWeb.Data;
-using BulkyBookWeb.Models;
+﻿using BulkyBook.DataAccess;
+using BulkyBook.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -38,14 +38,14 @@ namespace BulkyBookWeb.Controllers
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("Name","Имя категории и порядковый номер не могут быть одинаковыми!");
+                ModelState.AddModelError("Name", "Name and Display order cannot be the same!");
             }
 
             if (ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Категория успешно создана!";
+                TempData["success"] = "Category successfully created!";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -79,14 +79,14 @@ namespace BulkyBookWeb.Controllers
         {
             if (obj.Name == obj.DisplayOrder.ToString())
             {
-                ModelState.AddModelError("Name", "Имя категории и порядковый номер не могут быть одинаковыми!");
+                ModelState.AddModelError("Name", "Name and Display order cannot be the same!");
             }
 
             if (ModelState.IsValid)
             {
                 _db.Categories.Update(obj);
                 _db.SaveChanges();
-                TempData["success"] = "Категория успешно отредактирована!";
+                TempData["success"] = "Category successfully edited!";
                 return RedirectToAction("Index");
             }
             return View(obj);
@@ -128,7 +128,7 @@ namespace BulkyBookWeb.Controllers
 
             _db.Categories.Remove(categoryFromDb);
             _db.SaveChanges();
-            TempData["success"] = "Категория успешно удалена!";
+            TempData["success"] = "Category successfully deleted!";
             return RedirectToAction("Index");
            
           
