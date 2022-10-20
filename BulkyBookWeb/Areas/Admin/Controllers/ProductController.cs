@@ -5,78 +5,57 @@ using Microsoft.AspNetCore.Mvc;
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CoverType : Controller
+    public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public CoverType(IUnitOfWork unitOfWork)
+        public ProductController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<CoverTypeModel> objCoverTypeList = _unitOfWork.CoverType.GetAll();
+            IEnumerable<ProductModel> objProductList = _unitOfWork.Product.GetAll();
 
-            return View(objCoverTypeList);
+            return View(objProductList);
         }
 
         //CREATE/////////////////////////////////////////////////
 
         //GET
-        public IActionResult Create()
-        {
-            return View();
-        }
+        
 
-        //POST
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-
-        public IActionResult Create(CoverTypeModel obj)
-        {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork.CoverType.Add(obj);
-                _unitOfWork.Save();
-                TempData["success"] = "Category successfully created!";
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-        }
-
-
-        //EDIT/////////////////////////////////////////////////
+        //Upsert/////////////////////////////////////////////////
 
         //GET
-        public IActionResult Edit(int? id)
+        public IActionResult Upsert(int? id)
         {
+            ProductModel product = new();
 
             if (id == null || id == 0)
             {
-                return NotFound();
+                //Create product
+                return View(product);
             }
-
-            // var categoryFromDb = _db.Categories.Find(id);
-            var CoverTypeFromDbFirst = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
-            // var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
-
-            if (CoverTypeFromDbFirst == null)
+            else
             {
-                return NotFound();
+                //Update product
+
             }
-            return View(CoverTypeFromDbFirst);
+
+            return View(product);
         }
 
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public IActionResult Edit(CoverTypeModel obj)
+        public IActionResult Upsert(ProductModel obj)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.CoverType.Update(obj);
+                _unitOfWork.Product.Update(obj);
                 _unitOfWork.Save();
                 TempData["success"] = "Category successfully edited!";
                 return RedirectToAction("Index");
@@ -97,14 +76,14 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             }
 
             // var categoryFromDb = _db.Categories.Find(id);
-            var CoverTypeFromDbFirst = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
+            var productFromDbFirst = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             // var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
 
-            if (CoverTypeFromDbFirst == null)
+            if (productFromDbFirst == null)
             {
                 return NotFound();
             }
-            return View(CoverTypeFromDbFirst);
+            return View(productFromDbFirst);
         }
 
         //POST
@@ -114,15 +93,15 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         public IActionResult DeletePOST(int? id)
         {
             // var categoryFromDb = _db.Categories.Find(id);
-            var CoverTypeFromDbFirst = _unitOfWork.CoverType.GetFirstOrDefault(u => u.Id == id);
+            var productFromDbFirst = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
             // var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
 
-            if (CoverTypeFromDbFirst == null)
+            if (productFromDbFirst == null)
             {
                 return NotFound();
             }
 
-            _unitOfWork.CoverType.Remove(CoverTypeFromDbFirst);
+            _unitOfWork.Product.Remove(productFromDbFirst);
             _unitOfWork.Save();
             TempData["success"] = "Category successfully deleted!";
             return RedirectToAction("Index");
