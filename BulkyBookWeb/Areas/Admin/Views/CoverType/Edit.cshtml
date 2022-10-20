@@ -1,13 +1,13 @@
 ﻿@model BulkyBook.Models.CoverTypeModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<form asp-controller="CoverType" asp-action="Create" metod="post">
+<form asp-controller="CoverType" asp-area="Admin" asp-action="Edit" metod="post">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Create cover type</h2>
+            <h2 class="text-primary">Edit cover type</h2>
             <hr/>
         </div>
 
@@ -18,10 +18,11 @@
             <input asp-for="Name" class="form-control mt-3" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+
         <div class="col-12 mt-3">
 
-        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
-        <a asp-controller="CoverType" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to list</a>
+        <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+        <a asp-controller="CoverType" asp-area="Admin" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to list</a>
         </div>
     </div>
 </form>

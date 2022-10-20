@@ -4,11 +4,11 @@
     ViewData["Title"] = "Delete";
 }
 
-<form asp-controller="CoverType" asp-action="Delete" metod="post">
+<form asp-controller="CoverType" asp-area="Admin" asp-action="Delete" metod="post">
     <input asp-for="Id" hidden />
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2 class="text-primary">Delete category</h2>
+            <h2 class="text-primary">Delete cover type</h2>
             <hr/>
         </div>
 
@@ -22,7 +22,7 @@
         <div class="col-12 mt-3">
 
         <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
-        <a asp-controller="CoverType" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to list</a>
+        <a asp-controller="CoverType" asp-area="Admin" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to list</a>
         </div>
     </div>
 </form>
