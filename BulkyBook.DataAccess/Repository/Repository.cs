@@ -1,4 +1,5 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
+using BulkyBook.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace BulkyBook.DataAccess.Repository
 
         public void Add(T entity)
         {
+            
             dbSet.Add(entity);
             _db.SaveChanges();
         }
