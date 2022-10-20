@@ -13,4 +13,5 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<CategoryModel> Categories { get; set; }
     public DbSet<CoverTypeModel> CoverTypes { get; set; }
+    public DbSet<ProductModel> Products { get; set; }
 }

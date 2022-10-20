@@ -10,7 +10,7 @@ namespace BulkyBook.Models
 
         [DisplayName("Name")]
         [Required]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [DisplayName("Dsiplay order")]
         [Range(1, 100, ErrorMessage = "Enter a number from 1 to 100")]

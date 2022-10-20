@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
 
