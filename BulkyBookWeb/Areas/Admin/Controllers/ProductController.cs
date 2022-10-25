@@ -20,15 +20,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<ProductModel> objProductList = _unitOfWork.Product.GetAll();
-
-            return View(objProductList);
+            return View();
         }
-
-        //CREATE/////////////////////////////////////////////////
-
-        //GET
-
 
         //Upsert/////////////////////////////////////////////////
 
@@ -60,10 +53,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             else
             {
                 //Update product
-
+                productVM.Product = _unitOfWork.Product.GetFirstOrDefault(u=>u.Id==id);
+                return View(productVM);
             }
 
-            return View(productVM);
+            
         }
 
         //POST
@@ -74,54 +68,63 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 string wwwRootPath = _hostEnvironment.WebRootPath;
+
                 if (file != null)
                 {
                     string fileName = Guid.NewGuid().ToString();
                     var uploads = Path.Combine(wwwRootPath, @"images\products");
                     var extension = Path.GetExtension(file.FileName);
+
+                    if (obj.Product.ImageUrl != null)
+                    {
+                        var oldImagePath = Path.Combine(wwwRootPath, obj.Product.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+
+                    }
+
                     using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                     {
                         file.CopyTo(fileStreams);
                     }
                     obj.Product.ImageUrl = @"images\products\"+fileName+extension;
                 }
-                _unitOfWork.Product.Add(obj.Product);
+
+
+                if (obj.Product.Id == 0)
+                {
+                    _unitOfWork.Product.Add(obj.Product);
+                    TempData["success"] = "Product created successfully!";
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(obj.Product);
+                    TempData["success"] = "Product updated successfully!";
+                }
+               
                 _unitOfWork.Save();
-                TempData["success"] = "Product created successfully!";
+
                 return RedirectToAction("Index");
             }
             return View(obj);
         }
 
-        //DELETE/////////////////////////////////////////////////
 
-        //GET
-
-        public IActionResult Delete(int? id)
+        #region API CALLS
+        [HttpGet]
+        public IActionResult GetAll()
         {
-
-            if (id == null || id == 0)
-            {
-                return NotFound();
-            }
-
-            // var categoryFromDb = _db.Categories.Find(id);
-            var productFromDbFirst = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
-            // var categoryFromDbSingle = _db.Categories.SingleOrDefault(u => u.Id == id);
-
-            if (productFromDbFirst == null)
-            {
-                return NotFound();
-            }
-            return View(productFromDbFirst);
+            var productList = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+            return Json(new { data = productList });
         }
 
         //POST
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-
-        public IActionResult DeletePOST(int? id)
+        [HttpDelete]
+        public IActionResult Delete(int? id)
         {
             // var categoryFromDb = _db.Categories.Find(id);
             var productFromDbFirst = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id);
@@ -129,16 +132,25 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
             if (productFromDbFirst == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error while deleting"}) ;
             }
-
+            var oldImagePath = Path.Combine(_hostEnvironment.WebRootPath, productFromDbFirst.ImageUrl.TrimStart('\\'));
+            if (System.IO.File.Exists(oldImagePath))
+            {
+                System.IO.File.Delete(oldImagePath);
+            }
             _unitOfWork.Product.Remove(productFromDbFirst);
             _unitOfWork.Save();
-            TempData["success"] = "Category successfully deleted!";
-            return RedirectToAction("Index");
+            return Json(new { success = true, message = "Delete successfully" });
+            
 
 
         }
 
+        #endregion
+
+
     }
+
+
 }
