@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository.IRepository
 {
-    public interface IShoppingCartRepository : IRepository<ShoppingCartModel>
+    public interface IApplicationUserRepository : IRepository<ApplicationUserModel>
     {
-        
+    
 
     }
 }

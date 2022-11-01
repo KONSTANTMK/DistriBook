@@ -9,14 +9,15 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.DataAccess.Repository
 {
-    public class ShoppingCartRepository : Repository<ShoppingCartModel>, IShoppingCartRepository
+    public class ApplicationUserRepository : Repository<ApplicationUserModel>, IApplicationUserRepository
     {
         private readonly ApplicationDbContext _db;
 
 
-        public ShoppingCartRepository(ApplicationDbContext db) :base(db)
+        public ApplicationUserRepository(ApplicationDbContext db) :base(db)
         {
             _db = db;
         }
+
     }
 }
