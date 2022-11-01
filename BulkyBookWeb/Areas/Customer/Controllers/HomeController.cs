@@ -25,7 +25,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
         public IActionResult Details(int id)
         {
-            ShoppingCardModel cardObj = new()
+            ShoppingCartModel cardObj = new()
             {
                 Count = 1,
                 Product = _unitOfWork.Product.GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CoverType")
