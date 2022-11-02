@@ -130,7 +130,7 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
             if (!_roleManager.RoleExistsAsync(SD.Role_Admin).GetAwaiter().GetResult())
             {
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Indi)).GetAwaiter().GetResult();
-                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Company)).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Comp)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Employee)).GetAwaiter().GetResult();
             }
@@ -169,7 +169,7 @@ namespace BulkyBookWeb.Areas.Identity.Pages.Account
                 user.PostalCode = Input.PostalCode;
                 user.Name = Input.Name;
                 user.PhoneNumber = Input.PhoneNumber;
-                if(Input.Role == SD.Role_User_Company)
+                if(Input.Role == SD.Role_User_Comp)
                 {
                     user.CompanyId = Input.CompanyId;
                 }
