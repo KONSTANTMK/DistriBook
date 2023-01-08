@@ -54,9 +54,9 @@ namespace DistriBook.DataAccess.DbInitializer
 
                 _userManager.CreateAsync(new ApplicationUserModel
                 {
-                    UserName = "admin@dotnetmastery.com",
-                    Email = "admin@dotnetmastery.com",
-                    Name = "Bhrugen Patel",
+                    UserName = "admin@aspkk.com",
+                    Email = "admin@aspkk.com",
+                    Name = "Konstantin Konstantinov",
                     PhoneNumber = "1112223333",
                     StreetAddress = "test 123 Ave",
                     State = "IL",
@@ -64,7 +64,7 @@ namespace DistriBook.DataAccess.DbInitializer
                     City = "Chicago"
                 }, "Admin123*").GetAwaiter().GetResult();
 
-                ApplicationUserModel? user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@dotnetmastery.com");
+                ApplicationUserModel? user = _db.ApplicationUsers.FirstOrDefault(u => u.Email == "admin@aspkk.com");
 
                 _userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
 
