@@ -1,5 +1,7 @@
 ﻿@model IEnumerable<DistriBook.Models.ProductModel>
-
+@{
+    ViewData["Title"] = "Home";
+}
 <div class="row pb-3">
     @foreach(var product in Model)
     {
