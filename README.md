@@ -24,17 +24,20 @@ Web service for ordering and buying books.
 
 <hr/>
 
-Веб сервис для заказа и покупки книг
+Веб сервис для покупки книг,написан на ASP.NET Core MVC,с целью демонстрации моих навыков.
 
-### Features
-- [x] Custom pickers based on UITextField, UITextView, UIDatePicker, UIPickerView, UITableView, UICollectionView and MKMapView.
-- [x] Example using a Storyboard.
-- [x] Easy contentViewController placement.
-- [x] Attributed title label and message label.
-- [x] Button customization: image and title color.
-- [x] Understandable action button placement.
-- [x] Easy presentation.
-- [x] Pure Swift 4.
+### Возможности
+- [x] Вход.
+- [x] Регистрация.
+- [x] Сбор заказа в корзине.
+- [x] Покупка и оплата через Stripe (отключена в демо версии).
+- [x] Отслеживание статуса заказа.
+- [x] Изменение статуса заказа.
+- [x] Создание новых товаров
+- [x] Создание категорий товаров.
+- [x] Возможность загрузки изображения товара.
+- [x] Вызможность выбора категории товара.
+- [x] Возможность выбора типа обложки товара.
 
 ## DEMO
 
