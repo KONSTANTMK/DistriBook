@@ -32,7 +32,7 @@ Web service for ordering and buying books.
 
 - URL
 
-```text
+```url
 https://distribook.azurewebsites.net/
 ```
 
