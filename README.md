@@ -21,9 +21,9 @@ Web service for buying books, written in ASP.NET Core MVC to demonstrate my skil
 - [x] Change order status.
 - [x] Create new products
 - [x] Create product categories.
-- [x] Ability to upload product images.
-- [x] Possibility to select a product category.
-- [x] Ability to select the type of product cover.
+- [x] Upload product image.
+- [x] Select product category.
+- [x] Select the type of product cover.
 
 <hr/>
 
@@ -38,9 +38,9 @@ Web service for buying books, written in ASP.NET Core MVC to demonstrate my skil
 - [x] Изменение статуса заказа.
 - [x] Создание новых товаров
 - [x] Создание категорий товаров.
-- [x] Возможность загрузки изображения товара.
-- [x] Вызможность выбора категории товара.
-- [x] Возможность выбора типа обложки товара.
+- [x] Загрузка изображения товара.
+- [x] Выбор категории товара.
+- [x] Выбор типа обложки товара.
 
 <hr/>
 
