@@ -21,6 +21,8 @@ Web service for ordering and buying books.
 - [x] Easy presentation.
 - [x] Pure Swift 4.
 
+<hr/>
+
 Веб сервис для заказа и покупки книг
 
 ### Features
