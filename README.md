@@ -60,33 +60,6 @@ Password
 Admin123*
 ```
 <hr/>
-## Alerts vs. Action Sheets
-
-There are some things to keep in mind when using `.actionSheet` and `.alert` styles:
-
-* Pickers better to use in `.actionSheet` style.
-* `UITextField` can be used in both styles.
-
-## Installing
-
-#### Manually
-
-Download and drop `/Source` folder in your project.
-
-## Requirements
-
-* Swift 4
-* iOS 11 or higher
-
-## Authors
-
-* **Roman Volodko** -  [dillidon](https://github.com/dillidon)
-
-## Communication
-
-* If you **found a bug**, open an issue.
-* If you **have a feature request**, open an issue.
-* If you **want to contribute**, submit a pull request.
 
 ## License
 
