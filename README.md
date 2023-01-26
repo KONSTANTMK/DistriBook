@@ -10,21 +10,24 @@
 
 # DistriBook
 
-Web service for ordering and buying books.
+Web service for buying books, written in ASP.NET Core MVC to demonstrate my skills.
 
-### Features
-- [x] Custom pickers based on UITextField, UITextView, UIDatePicker, UIPickerView, UITableView, UICollectionView and MKMapView.
-- [x] Example using a Storyboard.
-- [x] Easy contentViewController placement.
-- [x] Attributed title label and message label.
-- [x] Button customization: image and title color.
-- [x] Understandable action button placement.
-- [x] Easy presentation.
-- [x] Pure Swift 4.
+### Opportunities
+- [x] Login.
+- [x] Registration.
+- [x] Collect order in cart.
+- [x] Buy and pay with Stripe (disabled in demo).
+- [x] Order status tracking.
+- [x] Change order status.
+- [x] Create new products
+- [x] Create product categories.
+- [x] Ability to upload product images.
+- [x] Possibility to select a product category.
+- [x] Ability to select the type of product cover.
 
 <hr/>
 
-Веб сервис для покупки книг,написан на ASP.NET Core MVC,с целью демонстрации моих навыков.
+Веб сервис для покупки книг,написан на ASP.NET Core MVC с целью демонстрации моих навыков.
 
 ### Возможности
 - [x] Вход.
