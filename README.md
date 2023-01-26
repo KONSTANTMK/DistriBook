@@ -11,8 +11,6 @@
 
 Web service for ordering and buying books.
 
-
-
 ### Features
 - [x] Custom pickers based on UITextField, UITextView, UIDatePicker, UIPickerView, UITableView, UICollectionView and MKMapView.
 - [x] Example using a Storyboard.
@@ -23,10 +21,17 @@ Web service for ordering and buying books.
 - [x] Easy presentation.
 - [x] Pure Swift 4.
 
-<div align = "center">
-<img src="Assets/gifs/actionSheet-.gif" width="400" />
-<img src="Assets/gifs/alert-.gif" width="400" />
-</div>
+Веб сервис для заказа и покупки книг
+
+### Features
+- [x] Custom pickers based on UITextField, UITextView, UIDatePicker, UIPickerView, UITableView, UICollectionView and MKMapView.
+- [x] Example using a Storyboard.
+- [x] Easy contentViewController placement.
+- [x] Attributed title label and message label.
+- [x] Button customization: image and title color.
+- [x] Understandable action button placement.
+- [x] Easy presentation.
+- [x] Pure Swift 4.
 
 ## DEMO
 
