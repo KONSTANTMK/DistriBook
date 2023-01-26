@@ -3,6 +3,7 @@
 </div>
 
 <p align="center">
+<img src="https://img.shields.io/badge/Study%20Project-C#-blue.svg" alt="ASP.NET Core MVC 4.0"/>
 <img src="https://img.shields.io/badge/ASP.NET%20Core%20MVC-6.0-blue.svg" alt="ASP.NET Core MVC 4.0"/>
 </a>
 </p>
