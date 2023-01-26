@@ -75,8 +75,3 @@ Password
 ```url
 Admin123*
 ```
-<hr/>
-
-## License
-
-This project is licensed under the MIT License.
