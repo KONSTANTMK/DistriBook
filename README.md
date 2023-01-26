@@ -48,6 +48,18 @@ Password
 Admin123*
 ```
 <hr/>
+
+- Customer account
+
+Login
+```url
+Customer@aspkk.com
+```
+Password
+```url
+Admin123*
+```
+<hr/>
 ## Alerts vs. Action Sheets
 
 There are some things to keep in mind when using `.actionSheet` and `.alert` styles:
