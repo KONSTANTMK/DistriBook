@@ -35,18 +35,18 @@ Web service for ordering and buying books.
 ```url
 https://distribook.azurewebsites.net/
 ```
-
+<hr/>
 - Administrator account
 
---Login
+Login
 ```url
 Admin@aspkk.com
 ```
---Password
+Password
 ```url
 Admin123*
 ```
-
+<hr/>
 ## Alerts vs. Action Sheets
 
 There are some things to keep in mind when using `.actionSheet` and `.alert` styles:
