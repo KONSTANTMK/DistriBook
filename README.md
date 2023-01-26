@@ -7,9 +7,9 @@
 </a>
 </p>
 
-# Alerts & Pickers
+# DistriBook
 
-Advanced usage of native UIAlertController with TextField, TextView, DatePicker, PickerView, TableView, CollectionView and MapView.
+Web service for ordering and buying books.
 
 
 
@@ -28,14 +28,12 @@ Advanced usage of native UIAlertController with TextField, TextView, DatePicker,
 <img src="Assets/gifs/alert-.gif" width="400" />
 </div>
 
-## Usage
+## DEMO
 
-- New Alert
+- URL
 
-```swift
-let alert = UIAlertController(style: .alert, title: "Title", message: "Message")
-// or
-let alert = UIAlertController(style: .alert)
+```text
+https://distribook.azurewebsites.net/
 ```
 
 ## Alerts vs. Action Sheets
