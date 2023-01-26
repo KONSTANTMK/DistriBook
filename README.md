@@ -39,6 +39,8 @@ Web service for ordering and buying books.
 - [x] Вызможность выбора категории товара.
 - [x] Возможность выбора типа обложки товара.
 
+<hr/>
+
 ## DEMO
 
 - URL
