@@ -1,5 +1,5 @@
 <div align = "center">
-<img src="Assets/screenshot.jpg" width="700" />
+<img src="Assets/Screenshot.jpg" width="700" />
 </div>
 
 <p align="center">
